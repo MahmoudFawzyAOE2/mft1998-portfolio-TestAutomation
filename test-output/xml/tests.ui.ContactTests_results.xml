@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="UITest"
+           tests="3"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="31.756">
+    <properties></properties>
+
+
+
+            <testcase
+                name="verifySuccessfulNavigationToWhatsApp"
+                time="9.544"
+                classname="tests.ui.ContactTests">
+            </testcase>
+            <testcase
+                name="verifySuccessfulNavigationToLinkedinProfile"
+                time="4.309"
+                classname="tests.ui.ContactTests">
+            </testcase>
+            <testcase
+                name="verifySuccessfulNavigationToGithubProfile"
+                time="17.903"
+                classname="tests.ui.ContactTests">
+            </testcase>
+</testsuite>
