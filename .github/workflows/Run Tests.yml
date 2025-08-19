@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: MahmoudFawzyAOE2/mft1998-portfolio
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PAT_TOKEN }}
 
       - name: Run tests
         run: mvn test #cmd prompt to run tests
