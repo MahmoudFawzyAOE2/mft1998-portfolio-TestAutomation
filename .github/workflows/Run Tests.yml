@@ -22,7 +22,6 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Debug - Find testng.xml
-        working-directory: ./tests
         run: |
           echo "Looking for testng.xml:"
           find . -name "testng.xml" -type f
