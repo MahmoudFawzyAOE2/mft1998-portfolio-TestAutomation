@@ -3,6 +3,9 @@ name: Run Tests
 on:
   repository_dispatch: #Run this workflow only when the trigger [run-tests] is sent
     types: [run-tests]
+  push:
+    branches:
+      - main
 
 jobs:
   test:
