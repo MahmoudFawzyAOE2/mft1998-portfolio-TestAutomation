@@ -18,7 +18,7 @@ jobs:
           token: ${{ secrets.GH_PAT }}
 
       - name: Run tests
-        run: npm test #
+        run: mvn test #cmd prompt to run tests
 
       - name: Send Email with Results
         uses: dawidd6/action-send-mail@v3
