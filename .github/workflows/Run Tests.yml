@@ -11,6 +11,13 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+          
+      - name: Checkout website repo
+        uses: actions/checkout@v4
+        with:
+          repository: MahmoudFawzyAOE2/mft1998-portfolio
+          token: ${{ secrets.PAT_TOKEN }}
+
       - name: Checkout test repo
         uses: actions/checkout@v4
 
@@ -20,12 +27,6 @@ jobs:
           ls -la
           find . -name "pom.xml" -type f
           
-      - name: Checkout website repo
-        uses: actions/checkout@v4
-        with:
-          repository: MahmoudFawzyAOE2/mft1998-portfolio
-          token: ${{ secrets.PAT_TOKEN }}
-
       - name: Run tests
         run: mvn clean test -Dsurefire.suiteXmlFiles=TestNG.xml #cmd prompt to run tests
 
