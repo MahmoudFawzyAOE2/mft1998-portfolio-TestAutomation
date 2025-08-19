@@ -36,7 +36,7 @@ jobs:
           distribution: 'temurin'
           
       - name: Run tests
-        run: mvn clean test -DsuiteXmlFile=TestNG.xml #cmd prompt to run tests
+        run: mvn test -B -DsuiteXmlFile=TestNG.xml #cmd prompt to run tests
 
       - name: Send Email with Results
         uses: dawidd6/action-send-mail@v3
