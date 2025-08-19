@@ -28,7 +28,6 @@ jobs:
           echo "Current directory contents:"
           ls -la
 
-
       - name: Set up JDK 21
         uses: actions/setup-java@v4
         with:
@@ -36,7 +35,7 @@ jobs:
           distribution: 'temurin'
           
       - name: Run tests
-        run: mvn test -B -DsuiteXmlFile=TestNG.xml #cmd prompt to run tests
+        run: mvn test -B --no-transfer-progress -DsuiteXmlFile=testng.xml #cmd prompt to run tests
 
       - name: Send Email with Results
         uses: dawidd6/action-send-mail@v3
