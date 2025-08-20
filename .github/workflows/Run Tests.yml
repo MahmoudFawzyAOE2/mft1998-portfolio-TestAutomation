@@ -1,8 +1,15 @@
+# This wWrkflow excutes he automated test cases in the repo 
+
+
+
 name: Run Tests
 
 on:
-  repository_dispatch: #Run this workflow only when the trigger [run-tests] is sent
+  # Trigger1: trigger [run-tests] is sent from the website main repo when pushing new commit
+  repository_dispatch: 
     types: [run-tests]
+
+  # Trigger2: when pushing new code to the tests repo
   push:
     branches:
       - main
@@ -11,12 +18,6 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-          
-      - name: Checkout website repo
-        uses: actions/checkout@v4
-        with:
-          repository: MahmoudFawzyAOE2/mft1998-portfolio
-          token: ${{ secrets.PAT_TOKEN }}
 
       - name: Checkout test repo
         uses: actions/checkout@v4
