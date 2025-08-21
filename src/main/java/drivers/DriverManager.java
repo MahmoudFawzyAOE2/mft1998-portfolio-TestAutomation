@@ -22,11 +22,7 @@ public class DriverManager {
 
             // allow connections from chrome versions that may
             options.addArguments("--remote-allow-origins=*");
-
-            // give Chrome a unique profile dir in CI
-            String tempProfile = Files.createTempDirectory("chrome-profile").toString();
-            options.addArguments("--user-data-dir=" + tempProfile);
-
+            
             // Headless mode when specified in cmd prompt
             // use headless mode by adding -Dheadless=true to cmd
             if (EnvironmentUtils.isHeadless()) {
