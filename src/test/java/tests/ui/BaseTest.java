@@ -30,6 +30,12 @@ public class BaseTest {
 
     @AfterSuite
     public void openReport() {
+        // Skip if running in CI/CD
+        if (System.getenv("CI") != null || System.getenv("GITHUB_ACTIONS") != null) {
+            System.out.println("Report will be published to GitHub Pages");
+            return;
+        }
+
         try {
             File htmlFile = new File("test-output/html/index.html");
             if (htmlFile.exists()) {

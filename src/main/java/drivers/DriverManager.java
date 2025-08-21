@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.ChromeOptions;
+import utils.EnvironmentUtils;
 
 import java.time.Duration;
 
@@ -27,8 +28,7 @@ public class DriverManager {
 
             // Headless mode when specified in cmd prompt
             // use headless mode by adding -Dheadless=true to cmd
-            String headless = System.getProperty("headless", "false");
-            if (headless.equalsIgnoreCase("true")) {
+            if (EnvironmentUtils.isHeadless()) {
                 // no UI
                 options.addArguments("--headless=new");
 
