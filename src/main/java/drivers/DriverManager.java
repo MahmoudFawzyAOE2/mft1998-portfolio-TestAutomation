@@ -7,12 +7,14 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.ChromeOptions;
 import utils.EnvironmentUtils;
 
+import java.io.IOException;
+import java.nio.file.Files;
 import java.time.Duration;
 
 public class DriverManager {
     private static WebDriver driver;
 
-    public static WebDriver getDriver() {
+    public static WebDriver getDriver() throws IOException {
         if (driver == null) {
             WebDriverManager.chromedriver().setup();
 
@@ -21,10 +23,9 @@ public class DriverManager {
             // allow connections from chrome versions that may
             options.addArguments("--remote-allow-origins=*");
 
-            // Always ensure unique profile directory
-            options.addArguments("--user-data-dir="
-                    + System.getProperty("java.io.tmpdir")
-                    + "/chrome-" + System.currentTimeMillis());
+            // give Chrome a unique profile dir in CI
+            String tempProfile = Files.createTempDirectory("chrome-profile").toString();
+            options.addArguments("--user-data-dir=" + tempProfile);
 
             // Headless mode when specified in cmd prompt
             // use headless mode by adding -Dheadless=true to cmd

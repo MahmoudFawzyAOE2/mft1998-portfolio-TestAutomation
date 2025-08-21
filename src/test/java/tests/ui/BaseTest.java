@@ -15,7 +15,7 @@ public class BaseTest {
     protected WebDriver driver;
 
     @BeforeMethod
-    public void setup() {
+    public void setup() throws IOException {
         driver = DriverManager.getDriver();
     }
 
