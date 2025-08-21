@@ -26,6 +26,8 @@ public class DriverManager {
             // Headless mode when specified in cmd prompt
             // use headless mode by adding -Dheadless=true to cmd
             if (EnvironmentUtils.isHeadless()) {
+                System.out.println("Headless Mode Activated");
+
                 // no UI
                 options.addArguments("--headless=new");
 
