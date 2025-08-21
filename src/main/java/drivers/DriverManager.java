@@ -22,7 +22,7 @@ public class DriverManager {
 
             // allow connections from chrome versions that may
             options.addArguments("--remote-allow-origins=*");
-            
+
             // Headless mode when specified in cmd prompt
             // use headless mode by adding -Dheadless=true to cmd
             if (EnvironmentUtils.isHeadless()) {
