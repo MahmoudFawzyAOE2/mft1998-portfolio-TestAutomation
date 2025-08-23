@@ -1,10 +1,8 @@
 name: Demo Workflow
 
 on: 
-  push:
-    branches:
-      - main
-
+  workflow_dispatch:
+    
 jobs:
   example-job:
     runs-on: ubuntu-latest
