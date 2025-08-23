@@ -5,6 +5,7 @@ import org.testng.ITestContext;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;
 import listeners.CustomListener;
+import utils.EnvironmentUtils;
 
 import java.awt.*;
 import java.io.File;
@@ -30,9 +31,9 @@ public class BaseTest {
 
     @AfterSuite
     public void openReport() {
-        // Skip if running in CI/CD
-        if (System.getenv("CI") != null || System.getenv("GITHUB_ACTIONS") != null) {
-            System.out.println("Report will be published to GitHub Pages");
+        // Skip if running in Headless Mode
+        if (EnvironmentUtils.isHeadless()) {
+            System.out.println("Reports are blocked in headless mode");
             return;
         }
 

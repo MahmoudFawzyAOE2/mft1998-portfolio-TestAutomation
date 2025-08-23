@@ -65,7 +65,7 @@ public class AssertUtils {
     }
 
     public void assertURLContains(String expectedKeyword) {
-        System.out.println("Asserting URL matches: " + expectedKeyword);
+        System.out.println("Asserting URL contains keyword: " + expectedKeyword);
 
         boolean matched = waitUtils.waitForUrlContains(expectedKeyword);
 

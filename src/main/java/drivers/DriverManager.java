@@ -23,6 +23,10 @@ public class DriverManager {
             // allow connections from chrome versions that may
             options.addArguments("--remote-allow-origins=*");
 
+            // Fix for user data directory issue
+            String userDataDir = System.getProperty("java.io.tmpdir") + "chrome-user-data-" + System.currentTimeMillis();
+            options.addArguments("--user-data-dir=" + userDataDir);
+
             // Headless mode when specified in cmd prompt
             // use headless mode by adding -Dheadless=true to cmd
             if (EnvironmentUtils.isHeadless()) {
