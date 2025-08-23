@@ -40,7 +40,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
-          git clone https://github.com/MahmoudFawzyAOE2/mft1998-portfolio-TestReport.git temp-repo2
+          git clone https://${{ secrets.PAT_TOKEN }}@github.com/MahmoudFawzyAOE2/mft1998-portfolio-TestReport.git temp-repo2
           cd temp-repo2
 
           git config user.name "github-actions[bot]"
