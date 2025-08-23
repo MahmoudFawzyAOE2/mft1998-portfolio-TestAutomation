@@ -36,13 +36,6 @@ jobs:
       - name: Run tests
         run: mvn clean test -B --no-transfer-progress -Dheadless=true #cmd prompt to run tests
 
-      - name: Check test-output folder
-        run: |
-          ls -R test-output || echo "test-output not found"
-
-      - name: Check timestamps
-        run: ls -lR test-output
-
       - name: Sync test-output to TestReport repository
         env:
           GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
