@@ -7,6 +7,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.ChromeOptions;
 import utils.EnvironmentUtils;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.time.Duration;
@@ -24,8 +25,8 @@ public class DriverManager {
             options.addArguments("--remote-allow-origins=*");
 
             // Fix for user data directory issue
-            String userDataDir = System.getProperty("java.io.tmpdir") + "chrome-user-data-" + System.currentTimeMillis();
-            options.addArguments("--user-data-dir=" + userDataDir);
+            File tmpProfile = Files.createTempDirectory("chrome-user-data-").toFile();
+            options.addArguments("--user-data-dir=" + tmpProfile.getAbsolutePath());
 
             // Headless mode when specified in cmd prompt
             // use headless mode by adding -Dheadless=true to cmd
