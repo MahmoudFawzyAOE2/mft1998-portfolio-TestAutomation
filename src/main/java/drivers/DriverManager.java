@@ -33,7 +33,7 @@ public class DriverManager {
                 System.out.println("Headless Mode Activated");
 
                 // no UI
-                options.addArguments("--headless=new");
+                options.addArguments("--headless");
 
                 // needed to launch chrome on root dir
                 options.addArguments("--no-sandbox");
