@@ -89,7 +89,7 @@
                 <configuration>
                     <testNGArtifactName>org.testng:testng</testNGArtifactName>
                     <suiteXmlFiles>
-                        <suiteXmlFile>TestNG.xml</suiteXmlFile>
+                        <suiteXmlFile>testng.xml</suiteXmlFile>
                     </suiteXmlFiles>
                     <systemPropertyVariables>
                         <java.awt.headless>true</java.awt.headless>
