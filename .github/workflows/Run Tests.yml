@@ -52,25 +52,30 @@ jobs:
           git commit -m "chore: update TestNG test-output reports [skip ci]" || echo "No changes to commit"
           git push origin HEAD:${GITHUB_REF#refs/heads/}
           
-#      - name: Sync test-output to TestReport repository
-#        env:
-#          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
-#        run: |
-#          git clone https://x-access-token:$PAT@github.com/MahmoudFawzyAOE2/mft1998-portfolio-TestReport.git temp-repo2
-#          cd temp-repo2
-#
-#          git config user.name "github-actions[bot]"
-#          git config user.email "github-actions[bot]@users.noreply.github.com"
-#
-#          rm -rf test-output
-#          cp -r ../test-output ./
-#
-#          git add test-output/
-#          git commit -m "Update test-output from repo1 CI/CD [skip ci]" || exit 0
-#          git push origin main
-#
-#          cd ..
-#          rm -rf temp-repo2
+      - name: Sync test-output to TestReport repository
+        env:
+          PAT: ${{ secrets.PAT_TOKEN }}
+        run: |
+          # Clone reporting repo
+          git clone https://x-access-token:${PAT}@github.com/MahmoudFawzyAOE2/mft1998-portfolio-TestReport.git temp-repo2
+          cd temp-repo2
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          # Replace old reports with fresh ones
+          rm -rf test-output
+          cp -r ../test-output ./test-output
+
+          # Add timestamp so commits are guaranteed
+          date > test-output/run_timestamp.txt
+
+          git add -f test-output/
+          git commit -m "chore: update test-output from TestAutomation CI [skip ci]" --allow-empty
+          git push origin main
+
+          cd ..
+          rm -rf temp-repo2
 
       - name: Send Email with Results
         uses: dawidd6/action-send-mail@v3
