@@ -14,9 +14,13 @@ on:
     paths:
       - "src/**"
 
-  # Trigger3: 
+  # Trigger3: Manual Trigger 
   workflow_dispatch:
 
+# allow the workflow to commit code to the repo
+permissions:
+  contents: write
+  
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -24,6 +28,9 @@ jobs:
 
       - name: Checkout test repo
         uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 0
 
       - name: Debug - Find testng.xml
         run: |
