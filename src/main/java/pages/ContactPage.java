@@ -1,10 +1,8 @@
 package pages;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-
-import java.util.List;
+import testData.TestData;
 
 public class ContactPage extends BasePage {
 
@@ -17,8 +15,14 @@ public class ContactPage extends BasePage {
     /*-----------  Locators  -----------*/
     By githubLocator = By.id("btn-github");
     By linkedinLocator = By.id("btn-linkedin");
-    By emailLocator = By.id("btn-email");
     By whatsappLocator = By.id("btn-whatsapp");
+
+    By nameFieldLocator = By.id("name");
+    By emailFieldLocator = By.id("email");
+    By messageFieldLocator = By.id("message");
+    By subjectFieldLocator = By.id("subject");
+
+    By sendButtonLocator = By.cssSelector("button[type='submit']");
 
     /*-----------  Actions  -----------*/
     public void clickGithubIcon() {
@@ -29,12 +33,16 @@ public class ContactPage extends BasePage {
         WebElement linkedinButton = driver.findElement(linkedinLocator);
         linkedinButton.click();
     }
-    public void clickEmailIcon() {
-        WebElement emailButton = driver.findElement(emailLocator);
-        emailButton.click();
-    }
     public void clickWhatsAppIcon() {
         WebElement whatsappButton = driver.findElement(whatsappLocator);
         whatsappButton.click();
     }
+    public void fillForm(String name, String email, String subject, String message) {
+        driver.findElement(nameFieldLocator).sendKeys(name);
+        driver.findElement(emailFieldLocator).sendKeys(email);
+        driver.findElement(subjectFieldLocator).sendKeys(subject);
+        driver.findElement(messageFieldLocator).sendKeys(message);
+        driver.findElement(sendButtonLocator).click();
+    }
+
 }

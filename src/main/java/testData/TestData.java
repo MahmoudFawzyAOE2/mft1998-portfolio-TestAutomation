@@ -4,18 +4,13 @@ import java.util.List;
 
 public class TestData {
 
-    public static String AdminUserName = "Admin";
-    public static String AdminPassword = "admin123";
-    public static String AdminRole = "Admin";
-    public static String AdminStatus = "Enabled";
-    public static int AdminPageIndex = 0;
-    public static int NumberOfAdmins = 1;
+    public static String toastSuccessMessage = "Message sent!";
 
-    public static List<String> AdminData = List.of(
-            AdminRole,
-            AdminUserName,
-            AdminStatus
-    );
+    public static final String NAME = "John Doe";
+    public static final String EMAIL = "JohnDoe@example.com";
+    public static final String SUBJECT = "Test - Inquiry about services";
+    public static final String MESSAGE = "Hello, This is a message sent by the test automation script. I would like to know more about your services.";
+
 }
 
 

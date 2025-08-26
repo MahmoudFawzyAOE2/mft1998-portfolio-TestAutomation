@@ -30,12 +30,10 @@ public class AssertUtils {
         Assert.assertEquals(actualText, expectedText,
                 "Text mismatch! Expected: \"" + expectedText + "\", but got: \"" + actualText + "\"");
     }
-
     public void assertSearchResultsCount(Supplier<Integer> countSupplier, int expectedCount) {
         waitUtils.wait.until(driver -> countSupplier.get() == expectedCount);
         Assert.assertEquals(countSupplier.get(), expectedCount);
     }
-
     public void assertEquals(List<String> actualList, List<String> expectedList) {
         Assert.assertEquals(actualList.size(), expectedList.size(),
                 "List sizes do not match!\nExpected size: " + expectedList.size() + ", Actual size: " + actualList.size());
@@ -53,17 +51,19 @@ public class AssertUtils {
         Assert.assertTrue(actualText.contains(expectedSubstring),
                 "Expected text to contain: \"" + expectedSubstring + "\", but got: \"" + actualText + "\"");
     }
+    public void assertTextMatches(WebElement element, String expectedText) {
+        String actualText = elementActions.getTextFromElement(element);
+        Assert.assertEquals(actualText, expectedText,
+                "Text mismatch! Expected: \"" + expectedText + "\", but got: \"" + actualText + "\"");
+    }
     public void assertURLMatches(String expectedURL) {
         System.out.println("Asserting URL matches: " + expectedURL);
-
         boolean matched = waitUtils.waitForURLToBe(expectedURL);
-
         if (!matched) {
             String actualURL = driver.getCurrentUrl();
             Assert.fail("URL did not match within timeout.\nExpected URL: \"" + expectedURL + "\"\nActual:   \"" + actualURL + "\"");
         }
     }
-
     public void assertURLContains(String expectedKeyword) {
         System.out.println("Asserting URL contains keyword: " + expectedKeyword);
 
@@ -74,7 +74,6 @@ public class AssertUtils {
             Assert.fail("URL did not match within timeout.\nExpected Keyword: \"" + expectedKeyword + "\"\nActual:   \"" + actualURL + "\"");
         }
     }
-
     public void assertElementIsVisible(WebElement element) {
         try {
             if (element.isDisplayed()) {

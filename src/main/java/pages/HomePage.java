@@ -14,9 +14,9 @@ public class HomePage extends BasePage {
     }
 
     /*-----------  Locators  -----------*/
-    // Define locators for page elements here
+    // Define locators for home page elements here
 
     /*-----------  Actions  -----------*/
-    // Define methods to interact with page elements here{
+    // Define methods to interact with home page elements here{
 
 }

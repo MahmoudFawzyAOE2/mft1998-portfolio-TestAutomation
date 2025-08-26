@@ -1,12 +1,11 @@
 package pages.components;
 
-import pages.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import pages.BasePage;
 
 public class Toast extends BasePage {
-
     /*-----------  Constructor  -----------*/
     public Toast(WebDriver driver) {
         super(driver);
@@ -14,12 +13,23 @@ public class Toast extends BasePage {
     }
 
     /*-----------  Locators  -----------*/
-    private static final String bottomToastLocator = "div.oxd-toast-container.oxd-toast-container--bottom";
+    By toastMessageLocator = By.className("toast-viewport");
+    By toastCloseButtonLocator = By.className("toast-close");
+    By toastTitleLocator = By.className("toast-title");
+    By toastDescriptionLocator = By.className("toast-description");
 
     /*-----------  Actions  -----------*/
-    public WebElement getBottomToast() {
-        System.out.println("Getting bottom toast element");
-        By locator = By.cssSelector(bottomToastLocator);
-        return waitUtils.waitForVisibility(locator);
+    public WebElement getToastMessage() {
+        return driver.findElement(toastMessageLocator);
     }
+    public WebElement getToastTitle() {
+        return driver.findElement(toastTitleLocator);
+    }
+    public WebElement getToastDescription() {
+        return driver.findElement(toastDescriptionLocator);
+    }
+    public void closeToast() {
+        driver.findElement(toastCloseButtonLocator).click();
+    }
+
 }

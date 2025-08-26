@@ -1,7 +1,10 @@
 package tests.ui;
 
 import listeners.CustomListener;
+import org.testng.annotations.DataProvider;
 import pages.*;
+import pages.components.Toast;
+import testData.TestData;
 import utils.AssertUtils;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
@@ -18,11 +21,13 @@ public class ContactTests extends BaseTest {
     private AssertUtils assertUtils;
     private DriverUtils driverUtils;
     private RobotUtils robotUtils;
+    private Toast toast;
 
     @BeforeMethod
     public void setUp() {
         // Connect WebDriver from Test with WebDriver from Page
         contactPage = new ContactPage(driver);
+        toast = new Toast(driver);
         assertUtils = new AssertUtils(driver);
         driverUtils = new DriverUtils(driver);
         robotUtils = new RobotUtils(driver);
@@ -58,24 +63,7 @@ public class ContactTests extends BaseTest {
         assertUtils.assertURLContains("github");
     }
 
-    /**
     @Test(priority = 3)
-    public void verifySuccessfulNavigationToEmail() {
-        // Navigate to Services page
-        driver.navigate().to(URLs.CONTACT_URL);
-
-        // Click on the Email icon
-        contactPage.clickEmailIcon();
-
-        // Wait for the email client to open in a new tab
-        driverUtils.switchToTab(1);
-
-        // Verify that the email client opens with the correct email address
-        assertUtils.assertURLContains("1998mft1998@gmail.com");
-    }
-        */
-
-    @Test(priority = 4)
     public void verifySuccessfulNavigationToWhatsApp() throws InterruptedException {
         // Navigate to Services page
         driver.navigate().to(URLs.CONTACT_URL);
@@ -91,5 +79,27 @@ public class ContactTests extends BaseTest {
 
         // Verify that the WhatsApp chat opens with the correct phone number
         assertUtils.assertURLContains("whatsapp");
+    }
+
+    @DataProvider(name = "contactFormData")
+    public static Object[][] provideContactFormData() {
+        return new Object[][] {
+                { TestData.NAME, TestData.EMAIL, TestData.SUBJECT, TestData.MESSAGE }
+        };
+    }
+
+    @Test(priority = 4, dataProvider = "contactFormData")
+    public void verifyVisitorCanSendAnEmailViaForm(String name, String email, String subject, String message) {
+        // Navigate to Services page
+        driver.navigate().to(URLs.CONTACT_URL);
+
+        // Fill out the contact form with provided data and submit
+        contactPage.fillForm(name, email, subject, message);
+
+        // Assert that the success toast is displayed
+        assertUtils.assertElementIsVisible(toast.getToastMessage());
+
+        // Assert that the toast title is "Success"
+        assertUtils.assertTextMatches(toast.getToastTitle(), TestData.toastSuccessMessage);
     }
 }
