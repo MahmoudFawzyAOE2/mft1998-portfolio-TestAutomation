@@ -2,36 +2,36 @@
 <testng-results ignored="0" total="4" passed="2" failed="2" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-08-26T12:17:57 UTC" name="Functional UI Suite" finished-at="2025-08-26T12:18:27 UTC" duration-ms="30269">
+  <suite started-at="2025-08-26T13:56:58 UTC" name="Functional UI Suite" finished-at="2025-08-26T13:57:31 UTC" duration-ms="32747">
     <groups>
     </groups>
-    <test started-at="2025-08-26T12:17:57 UTC" name="UITest" finished-at="2025-08-26T12:18:27 UTC" duration-ms="30269">
+    <test started-at="2025-08-26T13:56:58 UTC" name="UITest" finished-at="2025-08-26T13:57:31 UTC" duration-ms="32747">
       <class name="tests.ui.ContactTests">
-        <test-method is-config="true" signature="setup()[pri:0, instance:tests.ui.ContactTests@478190fc]" started-at="2025-08-26T12:17:57 UTC" name="setup" finished-at="2025-08-26T12:18:05 UTC" duration-ms="8354" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.ui.ContactTests@478190fc]" started-at="2025-08-26T13:56:58 UTC" name="setup" finished-at="2025-08-26T13:57:07 UTC" duration-ms="9467" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.ui.ContactTests@478190fc]" started-at="2025-08-26T12:18:05 UTC" name="setUp" finished-at="2025-08-26T12:18:05 UTC" duration-ms="5" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.ui.ContactTests@478190fc]" started-at="2025-08-26T13:57:07 UTC" name="setUp" finished-at="2025-08-26T13:57:07 UTC" duration-ms="4" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="verifySuccessfulNavigationToLinkedinProfile()[pri:1, instance:tests.ui.ContactTests@478190fc]" started-at="2025-08-26T12:18:05 UTC" name="verifySuccessfulNavigationToLinkedinProfile" finished-at="2025-08-26T12:18:16 UTC" duration-ms="10691" status="FAIL">
+        <test-method signature="verifySuccessfulNavigationToLinkedinProfile()[pri:1, instance:tests.ui.ContactTests@478190fc]" started-at="2025-08-26T13:57:07 UTC" name="verifySuccessfulNavigationToLinkedinProfile" finished-at="2025-08-26T13:57:19 UTC" duration-ms="11256" status="FAIL">
           <exception class="org.openqa.selenium.TimeoutException">
             <message>
-              <![CDATA[Expected condition failed: waiting for url to contain "linkedin". Current url: "https://www.google.com/?zx=1756210686835&no_sw_cr=1" (tried for 10 second(s) with 500 milliseconds interval)
+              <![CDATA[Expected condition failed: waiting for url to contain "linkedin". Current url: "https://www.google.com/?zx=1756216629667&no_sw_cr=1" (tried for 10 second(s) with 500 milliseconds interval)
 Build info: version: '4.33.0', revision: '2c6aaad03a'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.11.0-1018-azure', java.version: '21.0.8'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 139.0.7258.127, chrome: {chromedriverVersion: 139.0.7258.138 (884e54ea8d4..., userDataDir: /tmp/chrome-user-data-35308...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:33347}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:33347/devtoo..., se:cdpVersion: 139.0.7258.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 3ff30cbcc52a3168f0ccf49d6efa2a68]]>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 139.0.7258.127, chrome: {chromedriverVersion: 139.0.7258.138 (884e54ea8d4..., userDataDir: /tmp/chrome-user-data-12154...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:45279}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:45279/devtoo..., se:cdpVersion: 139.0.7258.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e8b66076d47050211fe8ea0466af384a]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for url to contain "linkedin". Current url: "https://www.google.com/?zx=1756210686835&no_sw_cr=1" (tried for 10 second(s) with 500 milliseconds interval)
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for url to contain "linkedin". Current url: "https://www.google.com/?zx=1756216629667&no_sw_cr=1" (tried for 10 second(s) with 500 milliseconds interval)
 Build info: version: '4.33.0', revision: '2c6aaad03a'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.11.0-1018-azure', java.version: '21.0.8'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 139.0.7258.127, chrome: {chromedriverVersion: 139.0.7258.138 (884e54ea8d4..., userDataDir: /tmp/chrome-user-data-35308...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:33347}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:33347/devtoo..., se:cdpVersion: 139.0.7258.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 3ff30cbcc52a3168f0ccf49d6efa2a68
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 139.0.7258.127, chrome: {chromedriverVersion: 139.0.7258.138 (884e54ea8d4..., userDataDir: /tmp/chrome-user-data-12154...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:45279}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:45279/devtoo..., se:cdpVersion: 139.0.7258.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e8b66076d47050211fe8ea0466af384a
 at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
 at utils.WaitUtils.waitForUrlContains(WaitUtils.java:41)
@@ -73,65 +73,61 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifySuccessfulNavigationToLinkedinProfile -->
-        <test-method is-config="true" signature="tearDown(org.testng.ITestContext)[pri:0, instance:tests.ui.ContactTests@478190fc]" started-at="2025-08-26T12:18:16 UTC" name="tearDown" finished-at="2025-08-26T12:18:16 UTC" duration-ms="2" status="PASS">
+        <test-method is-config="true" signature="tearDown(org.testng.ITestContext)[pri:0, instance:tests.ui.ContactTests@478190fc]" started-at="2025-08-26T13:57:19 UTC" name="tearDown" finished-at="2025-08-26T13:57:19 UTC" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@4eba373c]]>
+                <![CDATA[org.testng.TestRunner@4c6007fb]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:tests.ui.ContactTests@478190fc]" started-at="2025-08-26T12:18:16 UTC" name="setup" finished-at="2025-08-26T12:18:16 UTC" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.ui.ContactTests@478190fc]" started-at="2025-08-26T13:57:19 UTC" name="setup" finished-at="2025-08-26T13:57:19 UTC" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.ui.ContactTests@478190fc]" started-at="2025-08-26T12:18:16 UTC" name="setUp" finished-at="2025-08-26T12:18:16 UTC" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.ui.ContactTests@478190fc]" started-at="2025-08-26T13:57:19 UTC" name="setUp" finished-at="2025-08-26T13:57:19 UTC" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="verifySuccessfulNavigationToGithubProfile()[pri:2, instance:tests.ui.ContactTests@478190fc]" started-at="2025-08-26T12:18:16 UTC" name="verifySuccessfulNavigationToGithubProfile" finished-at="2025-08-26T12:18:16 UTC" duration-ms="197" status="PASS">
+        <test-method signature="verifySuccessfulNavigationToGithubProfile()[pri:2, instance:tests.ui.ContactTests@478190fc]" started-at="2025-08-26T13:57:19 UTC" name="verifySuccessfulNavigationToGithubProfile" finished-at="2025-08-26T13:57:19 UTC" duration-ms="336" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifySuccessfulNavigationToGithubProfile -->
-        <test-method is-config="true" signature="tearDown(org.testng.ITestContext)[pri:0, instance:tests.ui.ContactTests@478190fc]" started-at="2025-08-26T12:18:16 UTC" name="tearDown" finished-at="2025-08-26T12:18:16 UTC" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="tearDown(org.testng.ITestContext)[pri:0, instance:tests.ui.ContactTests@478190fc]" started-at="2025-08-26T13:57:19 UTC" name="tearDown" finished-at="2025-08-26T13:57:19 UTC" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@4eba373c]]>
+                <![CDATA[org.testng.TestRunner@4c6007fb]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:tests.ui.ContactTests@478190fc]" started-at="2025-08-26T12:18:16 UTC" name="setup" finished-at="2025-08-26T12:18:16 UTC" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.ui.ContactTests@478190fc]" started-at="2025-08-26T13:57:19 UTC" name="setup" finished-at="2025-08-26T13:57:19 UTC" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.ui.ContactTests@478190fc]" started-at="2025-08-26T12:18:16 UTC" name="setUp" finished-at="2025-08-26T12:18:16 UTC" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="verifySuccessfulNavigationToWhatsApp()[pri:3, instance:tests.ui.ContactTests@478190fc]" started-at="2025-08-26T12:18:16 UTC" name="verifySuccessfulNavigationToWhatsApp" finished-at="2025-08-26T12:18:26 UTC" duration-ms="10216" status="FAIL">
+        <test-method signature="verifySuccessfulNavigationToWhatsApp()[pri:3, instance:tests.ui.ContactTests@478190fc]" started-at="2025-08-26T13:57:19 UTC" name="verifySuccessfulNavigationToWhatsApp" finished-at="2025-08-26T13:57:29 UTC" duration-ms="10208" status="FAIL">
           <exception class="org.openqa.selenium.TimeoutException">
             <message>
               <![CDATA[Expected condition failed: waiting for url to contain "whatsapp". Current url: "https://mahmoudfawzyaoe2.github.io/mft1998-portfolio/#/contact" (tried for 10 second(s) with 500 milliseconds interval)
 Build info: version: '4.33.0', revision: '2c6aaad03a'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.11.0-1018-azure', java.version: '21.0.8'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 139.0.7258.127, chrome: {chromedriverVersion: 139.0.7258.138 (884e54ea8d4..., userDataDir: /tmp/chrome-user-data-35308...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:33347}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:33347/devtoo..., se:cdpVersion: 139.0.7258.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 3ff30cbcc52a3168f0ccf49d6efa2a68]]>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 139.0.7258.127, chrome: {chromedriverVersion: 139.0.7258.138 (884e54ea8d4..., userDataDir: /tmp/chrome-user-data-12154...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:45279}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:45279/devtoo..., se:cdpVersion: 139.0.7258.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e8b66076d47050211fe8ea0466af384a]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for url to contain "whatsapp". Current url: "https://mahmoudfawzyaoe2.github.io/mft1998-portfolio/#/contact" (tried for 10 second(s) with 500 milliseconds interval)
 Build info: version: '4.33.0', revision: '2c6aaad03a'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.11.0-1018-azure', java.version: '21.0.8'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 139.0.7258.127, chrome: {chromedriverVersion: 139.0.7258.138 (884e54ea8d4..., userDataDir: /tmp/chrome-user-data-35308...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:33347}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:33347/devtoo..., se:cdpVersion: 139.0.7258.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 3ff30cbcc52a3168f0ccf49d6efa2a68
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 139.0.7258.127, chrome: {chromedriverVersion: 139.0.7258.138 (884e54ea8d4..., userDataDir: /tmp/chrome-user-data-12154...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:45279}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:45279/devtoo..., se:cdpVersion: 139.0.7258.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e8b66076d47050211fe8ea0466af384a
 at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
 at utils.WaitUtils.waitForUrlContains(WaitUtils.java:41)
@@ -173,22 +169,22 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifySuccessfulNavigationToWhatsApp -->
-        <test-method is-config="true" signature="tearDown(org.testng.ITestContext)[pri:0, instance:tests.ui.ContactTests@478190fc]" started-at="2025-08-26T12:18:26 UTC" name="tearDown" finished-at="2025-08-26T12:18:26 UTC" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.ui.ContactTests@478190fc]" started-at="2025-08-26T13:57:19 UTC" name="setUp" finished-at="2025-08-26T13:57:19 UTC" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestContext)[pri:0, instance:tests.ui.ContactTests@478190fc]" started-at="2025-08-26T13:57:29 UTC" name="tearDown" finished-at="2025-08-26T13:57:29 UTC" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@4eba373c]]>
+                <![CDATA[org.testng.TestRunner@4c6007fb]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:tests.ui.ContactTests@478190fc]" started-at="2025-08-26T12:18:26 UTC" name="setup" finished-at="2025-08-26T12:18:26 UTC" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="verifyVisitorCanSendAnEmailViaForm(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:tests.ui.ContactTests@478190fc]" started-at="2025-08-26T12:18:26 UTC" name="verifyVisitorCanSendAnEmailViaForm" data-provider="contactFormData" finished-at="2025-08-26T12:18:27 UTC" duration-ms="765" status="PASS">
+        <test-method signature="verifyVisitorCanSendAnEmailViaForm(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:tests.ui.ContactTests@478190fc]" started-at="2025-08-26T13:57:29 UTC" name="verifyVisitorCanSendAnEmailViaForm" data-provider="contactFormData" finished-at="2025-08-26T13:57:31 UTC" duration-ms="1435" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -214,22 +210,26 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyVisitorCanSendAnEmailViaForm -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.ui.ContactTests@478190fc]" started-at="2025-08-26T12:18:26 UTC" name="setUp" finished-at="2025-08-26T12:18:26 UTC" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.ui.ContactTests@478190fc]" started-at="2025-08-26T13:57:29 UTC" name="setup" finished-at="2025-08-26T13:57:29 UTC" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.ui.ContactTests@478190fc]" started-at="2025-08-26T13:57:29 UTC" name="setUp" finished-at="2025-08-26T13:57:29 UTC" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="tearDown(org.testng.ITestContext)[pri:0, instance:tests.ui.ContactTests@478190fc]" started-at="2025-08-26T12:18:27 UTC" name="tearDown" finished-at="2025-08-26T12:18:27 UTC" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="tearDown(org.testng.ITestContext)[pri:0, instance:tests.ui.ContactTests@478190fc]" started-at="2025-08-26T13:57:31 UTC" name="tearDown" finished-at="2025-08-26T13:57:31 UTC" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@4eba373c]]>
+                <![CDATA[org.testng.TestRunner@4c6007fb]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="openReport()[pri:0, instance:tests.ui.ContactTests@478190fc]" started-at="2025-08-26T12:18:27 UTC" name="openReport" finished-at="2025-08-26T12:18:27 UTC" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="openReport()[pri:0, instance:tests.ui.ContactTests@478190fc]" started-at="2025-08-26T13:57:31 UTC" name="openReport" finished-at="2025-08-26T13:57:31 UTC" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openReport -->
