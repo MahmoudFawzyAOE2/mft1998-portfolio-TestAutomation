@@ -1,27 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="UITest"
-           tests="3"
-           failures="0"
+<testsuite name="mft1998-portfolio-TestAutomation"
+           tests="2"
+           failures="1"
            errors="0"
            skipped="0"
-           time="31.756">
+           time="24.832">
     <properties></properties>
 
+            <testcase
+                name="openReport"
+                time="0.068"
+                classname="tests.ui.ContactTests">
+
+            <failure type="java.awt.HeadlessException" message="(null)">
+                <![CDATA[java.awt.HeadlessException
+                java.desktop/java.awt.Desktop.getDesktop(Desktop.java:302)tests.ui.BaseTest.openReport(BaseTest.java:43)java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)java.base/java.lang.reflect.Method.invoke(Method.java:580)org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)org.testng.SuiteRunner.privateRun(SuiteRunner.java:386)org.testng.SuiteRunner.run(SuiteRunner.java:312)org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)org.testng.TestNG.runSuitesLocally(TestNG.java:1208)org.testng.TestNG.runSuites(TestNG.java:1112)org.testng.TestNG.run(TestNG.java:1079)com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:65)com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:105)
+]]>
+            </failure>
+    </testcase>
 
 
             <testcase
-                name="verifySuccessfulNavigationToWhatsApp"
-                time="9.544"
-                classname="tests.ui.ContactTests">
-            </testcase>
-            <testcase
-                name="verifySuccessfulNavigationToLinkedinProfile"
-                time="4.309"
-                classname="tests.ui.ContactTests">
-            </testcase>
-            <testcase
-                name="verifySuccessfulNavigationToGithubProfile"
-                time="17.903"
+                name="verifyVisitorCanSendAnEmailViaForm"
+                time="24.764"
                 classname="tests.ui.ContactTests">
             </testcase>
 </testsuite>

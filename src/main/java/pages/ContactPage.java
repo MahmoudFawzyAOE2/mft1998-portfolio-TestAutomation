@@ -9,7 +9,6 @@ public class ContactPage extends BasePage {
     /*-----------  Constructor  -----------*/
     public ContactPage(WebDriver driver) {
         super(driver);
-        this.driver = driver;
     }
 
     /*-----------  Locators  -----------*/
@@ -26,23 +25,23 @@ public class ContactPage extends BasePage {
 
     /*-----------  Actions  -----------*/
     public void clickGithubIcon() {
-        WebElement githubButton = driver.findElement(githubLocator);
+        WebElement githubButton = waitUtils.waitForVisibility(githubLocator);
         githubButton.click();
     }
     public void clickLinkedInIcon() {
-        WebElement linkedinButton = driver.findElement(linkedinLocator);
+        WebElement linkedinButton = waitUtils.waitForVisibility(linkedinLocator);
         linkedinButton.click();
     }
     public void clickWhatsAppIcon() {
-        WebElement whatsappButton = driver.findElement(whatsappLocator);
+        WebElement whatsappButton = waitUtils.waitForVisibility(whatsappLocator);
         whatsappButton.click();
     }
     public void fillForm(String name, String email, String subject, String message) {
-        driver.findElement(nameFieldLocator).sendKeys(name);
-        driver.findElement(emailFieldLocator).sendKeys(email);
-        driver.findElement(subjectFieldLocator).sendKeys(subject);
-        driver.findElement(messageFieldLocator).sendKeys(message);
-        driver.findElement(sendButtonLocator).click();
+        waitUtils.waitForVisibility(nameFieldLocator).sendKeys(name);
+        waitUtils.waitForVisibility(emailFieldLocator).sendKeys(email);
+        waitUtils.waitForVisibility(subjectFieldLocator).sendKeys(subject);
+        waitUtils.waitForVisibility(messageFieldLocator).sendKeys(message);
+        waitUtils.waitForVisibility(sendButtonLocator).click();
     }
 
 }

@@ -4,32 +4,32 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import pages.BasePage;
+import utils.WaitUtils;
 
 public class Toast extends BasePage {
     /*-----------  Constructor  -----------*/
     public Toast(WebDriver driver) {
         super(driver);
-        this.driver = driver;
     }
 
     /*-----------  Locators  -----------*/
-    By toastMessageLocator = By.className("toast-viewport");
-    By toastCloseButtonLocator = By.className("toast-close");
-    By toastTitleLocator = By.className("toast-title");
-    By toastDescriptionLocator = By.className("toast-description");
+    By toastMessageLocator = By.id("toast-viewport");
+    By toastCloseButtonLocator = By.id("toast-close");
+    By toastTitleLocator = By.id("toast-title");
+    By toastDescriptionLocator = By.id("toast-description");
 
     /*-----------  Actions  -----------*/
     public WebElement getToastMessage() {
-        return driver.findElement(toastMessageLocator);
+        return waitUtils.waitForVisibility(toastMessageLocator);
     }
     public WebElement getToastTitle() {
-        return driver.findElement(toastTitleLocator);
+        return waitUtils.waitForVisibility(toastTitleLocator);
     }
     public WebElement getToastDescription() {
-        return driver.findElement(toastDescriptionLocator);
+        return waitUtils.waitForVisibility(toastDescriptionLocator);
     }
     public void closeToast() {
-        driver.findElement(toastCloseButtonLocator).click();
+        waitUtils.waitForVisibility(toastCloseButtonLocator).click();
     }
 
 }

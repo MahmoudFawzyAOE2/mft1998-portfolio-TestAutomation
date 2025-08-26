@@ -99,6 +99,8 @@ The CI/CD process connects **three repositories**:
         - Tests edits (push to this Repo), or
         - Trigger event from Website Repo.
     - Generates **test reports**.
+    - Commits Test Reports to the Reporting Repo 
+    - Sends an Email which notifies about the done tests and includes a link to the reporting website
 
 3. **[Reporting Repository](https://github.com/MahmoudFawzyAOE2/mft1998-portfolio-TestReport)**
     - Stores the generated **test reports**.
@@ -113,8 +115,9 @@ graph LR
     A[/📂 Website Repo\] -- run-test trigger --> B[/📂 Test Repo\]
     B -- Commit TestNG Reports --> C[/📂 Reporting Repo\]
     C -- GitHub Pages --> D(🌐 Reports Website)
+    B -- Email --> G((👤 Stakeholders))
     E -- Test Code Edits --> B
-    E((SW Tester)) -- Manual Dispatch --> B
+    E((👤SW Tester)) -- Manual Dispatch --> B
 ```
 
 ## 🔧 Tech Stack
@@ -131,6 +134,7 @@ graph LR
 
 - [ ] Enhance The CI/CD Triggers to exclude non-code related changes
 - [ ] Add more custom listeners for better events logging
+- [ ] Add Utils Documentation
 - [ ] Add parallel test execution  
 - [ ] Add Screenshot for better reporting
 - [ ] Add Allure Reports
