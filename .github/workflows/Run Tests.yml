@@ -106,6 +106,7 @@ jobs:
               echo "✓ Copying ReportNG XML reports..."
               cp -r target/surefire-reports/xml test-output/
             fi
+          fi
             
       - name: Add timestamp to reports
         run: date > test-output/run_timestamp.txt
