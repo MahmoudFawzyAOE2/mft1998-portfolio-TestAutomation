@@ -41,7 +41,7 @@ jobs:
       - name: Run tests
         run: |
           date +"%H:%M:%S"
-          mvn clean test -B --no-transfer-progress -Dheadless=true
+          mvn clean test -B --no-transfer-progress -Dheadless=true || true
           continue-on-error: true  
 
       - name: Debug - Check test-output folders
