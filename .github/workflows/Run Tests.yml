@@ -94,19 +94,38 @@ jobs:
           mkdir -p test-output
           
           if [ -d "target/surefire-reports" ]; then
-            echo "Processing surefire-reports..."
+            echo "Processing native TestNG reports from surefire-reports..."
             
-            # Copy ReportNG reports (html & xml subdirectories)
-            if [ -d "target/surefire-reports/html" ]; then
-              echo "✓ Copying ReportNG HTML reports..."
-              cp -r target/surefire-reports/html test-output/
+            # Copy native TestNG reports (files directly in surefire-reports)
+            echo "✓ Copying native TestNG reports..."
+            find target/surefire-reports -maxdepth 1 -type f -name "*.html" -exec cp {} test-output/ \;
+            find target/surefire-reports -maxdepth 1 -type f -name "*.css" -exec cp {} test-output/ \;
+            find target/surefire-reports -maxdepth 1 -type f -name "*.js" -exec cp {} test-output/ \;
+            find target/surefire-reports -maxdepth 1 -type f -name "*.xml" -exec cp {} test-output/ \;
+            find target/surefire-reports -maxdepth 1 -type f -name "*.txt" -exec cp {} test-output/ \;
+            find target/surefire-reports -maxdepth 1 -type f -name "*.png" -exec cp {} test-output/ \;
+            find target/surefire-reports -maxdepth 1 -type f -name "*.gif" -exec cp {} test-output/ \;
+            
+            # Ensure we get key TestNG files
+            if [ -f "target/surefire-reports/testng-results.xml" ]; then
+              echo "✓ Copied testng-results.xml"
             fi
             
-            if [ -d "target/surefire-reports/xml" ]; then
-              echo "✓ Copying ReportNG XML reports..."
-              cp -r target/surefire-reports/xml test-output/
+            if [ -f "target/surefire-reports/emailable-report.html" ]; then
+              echo "✓ Copied emailable-report.html"
             fi
+            
+            echo "Native TestNG reports copied successfully!"
+          else
+            echo "⚠️  No surefire-reports directory found"
           fi
+          
+          # Add timestamp
+          date > test-output/run_timestamp.txt
+          
+          echo ""
+          echo "Final test-output contents:"
+          ls -la test-output/
             
       - name: Add timestamp to reports
         run: date > test-output/run_timestamp.txt
