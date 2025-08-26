@@ -40,10 +40,12 @@ jobs:
           
       - name: Run tests
         run: mvn clean test -B --no-transfer-progress -Dheadless=true #cmd prompt to run tests
-          
-      - name: Add timestamp to reports
-        run: date > test-output/run_timestamp.txt
-          
+      
+      - name: List Allure results
+        run: |
+          ls -R target/allure-results || echo "No allure results found in target"  
+          ls -R /allure-results || echo "No allure results found in root"  
+        
       - name: Load test report history
         uses: actions/checkout@v3
         if: always()
@@ -58,7 +60,7 @@ jobs:
         with:
           gh_pages: gh-pages
           allure_history: allure-history
-          allure_results: build/allure-results
+          allure_results: /allure-results
 
       - name: Publish test report
         uses: peaceiris/actions-gh-pages@v3
