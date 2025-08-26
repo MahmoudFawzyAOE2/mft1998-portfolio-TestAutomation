@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <meta charset='utf-8'>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports1.css" rel="stylesheet" id="ultra" />
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" id="retro" disabled="false"/>
+    <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
+      <br/>
+      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" title="Collapse/expand all the suites" class="collapse-all-link">
+          <img src="collapseall.gif" class="collapse-all-icon">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" panel-name="suite-Functional_UI_Suite" class="navigator-link">
+              <span class="suite-name border-failed">Functional UI Suite</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" panel-name="test-xml-Functional_UI_Suite" class="navigator-link ">
+                    <span>testng.xml</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="testlist-Functional_UI_Suite" class="navigator-link ">
+                    <span class="test-stats">1 test</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="group-Functional_UI_Suite" class="navigator-link ">
+                    <span>0 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="times-Functional_UI_Suite" class="navigator-link ">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="reporter-Functional_UI_Suite" class="navigator-link ">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="ignored-methods-Functional_UI_Suite" class="navigator-link ">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="chronological-Functional_UI_Suite" class="navigator-link ">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">4 methods, 2 failed,   2 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Functional_UI_Suite" class="hide-methods failed suite-Functional_UI_Suite"> (hide)</a> <!-- hide-methods failed suite-Functional_UI_Suite -->
+                      <a href="#" panel-name="suite-Functional_UI_Suite" class="show-methods failed suite-Functional_UI_Suite"> (show)</a> <!-- show-methods failed suite-Functional_UI_Suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Functional_UI_Suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Functional_UI_Suite" title="tests.ui.ContactTests" class="method navigator-link" hash-for-method="verifySuccessfulNavigationToLinkedinProfile">verifySuccessfulNavigationToLinkedinProfile</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Functional_UI_Suite" title="tests.ui.ContactTests" class="method navigator-link" hash-for-method="verifySuccessfulNavigationToWhatsApp">verifySuccessfulNavigationToWhatsApp</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Functional_UI_Suite -->
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Functional_UI_Suite" class="hide-methods passed suite-Functional_UI_Suite"> (hide)</a> <!-- hide-methods passed suite-Functional_UI_Suite -->
+                      <a href="#" panel-name="suite-Functional_UI_Suite" class="show-methods passed suite-Functional_UI_Suite"> (show)</a> <!-- show-methods passed suite-Functional_UI_Suite -->
+                    </span>
+                    <div class="method-list-content passed suite-Functional_UI_Suite">
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Functional_UI_Suite" title="tests.ui.ContactTests" class="method navigator-link" hash-for-method="verifySuccessfulNavigationToGithubProfile">verifySuccessfulNavigationToGithubProfile</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Functional_UI_Suite" title="tests.ui.ContactTests" class="method navigator-link" hash-for-method="verifyVisitorCanSendAnEmailViaForm(John Doe, JohnDoe@example.com, Test - Inquiry about services, Hello, This is a message sent by the t...)">verifyVisitorCanSendAnEmailViaForm(John Doe, JohnDoe@example.com, Test - Inquiry about services, Hello, This is a message sent by the t...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-Functional_UI_Suite -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-Functional_UI_Suite" class="panel Functional_UI_Suite">
+          <div class="suite-Functional_UI_Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">tests.ui.ContactTests</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifySuccessfulNavigationToLinkedinProfile">
+                  </a> <!-- verifySuccessfulNavigationToLinkedinProfile -->
+                  <span class="method-name">verifySuccessfulNavigationToLinkedinProfile</span>
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for url to contain &quot;linkedin&quot;. Current url: &quot;https://www.google.com/?zx=1756221018604&amp;no_sw_cr=1&quot; (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.33.0&apos;, revision: &apos;2c6aaad03a&apos;
+System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.11.0-1018-azure&apos;, java.version: &apos;21.0.8&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 139.0.7258.127, chrome: {chromedriverVersion: 139.0.7258.138 (884e54ea8d4..., userDataDir: /tmp/chrome-user-data-10713...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:37087}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:37087/devtoo..., se:cdpVersion: 139.0.7258.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 925e128a0e6352935b7b2ce21f2ed1a2
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at utils.WaitUtils.waitForUrlContains(WaitUtils.java:41)
+	at utils.AssertUtils.assertURLContains(AssertUtils.java:70)
+	at tests.ui.ContactTests.verifySuccessfulNavigationToLinkedinProfile(ContactTests.java:48)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 29 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifySuccessfulNavigationToWhatsApp">
+                  </a> <!-- verifySuccessfulNavigationToWhatsApp -->
+                  <span class="method-name">verifySuccessfulNavigationToWhatsApp</span>
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for url to contain &quot;whatsapp&quot;. Current url: &quot;https://mahmoudfawzyaoe2.github.io/mft1998-portfolio/#/contact&quot; (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.33.0&apos;, revision: &apos;2c6aaad03a&apos;
+System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.11.0-1018-azure&apos;, java.version: &apos;21.0.8&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 139.0.7258.127, chrome: {chromedriverVersion: 139.0.7258.138 (884e54ea8d4..., userDataDir: /tmp/chrome-user-data-10713...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:37087}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:37087/devtoo..., se:cdpVersion: 139.0.7258.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 925e128a0e6352935b7b2ce21f2ed1a2
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at utils.WaitUtils.waitForUrlContains(WaitUtils.java:41)
+	at utils.AssertUtils.assertURLContains(AssertUtils.java:70)
+	at tests.ui.ContactTests.verifySuccessfulNavigationToWhatsApp(ContactTests.java:81)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 29 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Functional_UI_Suite-class-failed -->
+          <div class="suite-Functional_UI_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">tests.ui.ContactTests</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifySuccessfulNavigationToGithubProfile">
+                  </a> <!-- verifySuccessfulNavigationToGithubProfile -->
+                  <span class="method-name">verifySuccessfulNavigationToGithubProfile</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyVisitorCanSendAnEmailViaForm(John Doe, JohnDoe@example.com, Test - Inquiry about services, Hello, This is a message sent by the t...)">
+                  </a> <!-- verifyVisitorCanSendAnEmailViaForm(John Doe, JohnDoe@example.com, Test - Inquiry about services, Hello, This is a message sent by the t...) -->
+                  <span class="method-name">verifyVisitorCanSendAnEmailViaForm</span>
+                  <span class="parameters">(John Doe,JohnDoe@example.com,Test - Inquiry about services,Hello, This is a message sent by the test automation script. I would like to know more about your services.)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Functional_UI_Suite-class-passed -->
+        </div> <!-- panel Functional_UI_Suite -->
+        <div panel-name="test-xml-Functional_UI_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">/home/runner/work/mft1998-portfolio-TestAutomation/mft1998-portfolio-TestAutomation/testng.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite name=&quot;Functional UI Suite&quot; guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;UITest&quot; verbose=&quot;0&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;tests.ui.ContactTests&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;verifySuccessfulNavigationToLinkedinProfile&quot;/&gt;
+          &lt;include name=&quot;verifySuccessfulNavigationToGithubProfile&quot;/&gt;
+          &lt;include name=&quot;verifySuccessfulNavigationToWhatsApp&quot;/&gt;
+          &lt;include name=&quot;verifyVisitorCanSendAnEmailViaForm&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- tests.ui.ContactTests --&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- UITest --&gt;
+&lt;/suite&gt; &lt;!-- Functional UI Suite --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-Functional_UI_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for Functional UI Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">UITest (1 class)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-Functional_UI_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for Functional UI Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-Functional_UI_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for Functional UI Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_Functional_UI_Suite');
+function tableData_Functional_UI_Suite() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(4);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'verifySuccessfulNavigationToLinkedinProfile')
+data.setCell(0, 2, 'tests.ui.ContactTests')
+data.setCell(0, 3, 11089);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'verifySuccessfulNavigationToWhatsApp')
+data.setCell(1, 2, 'tests.ui.ContactTests')
+data.setCell(1, 3, 10205);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'verifyVisitorCanSendAnEmailViaForm')
+data.setCell(2, 2, 'tests.ui.ContactTests')
+data.setCell(2, 3, 782);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'verifySuccessfulNavigationToGithubProfile')
+data.setCell(3, 2, 'tests.ui.ContactTests')
+data.setCell(3, 3, 235);
+window.suiteTableData['Functional_UI_Suite']= { tableData: data, tableDiv: 'times-div-Functional_UI_Suite'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 22 seconds</span>
+              <div id="times-div-Functional_UI_Suite">
+              </div> <!-- times-div-Functional_UI_Suite -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-Functional_UI_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for Functional UI Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-Functional_UI_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">0 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-Functional_UI_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">tests.ui.ContactTests</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">9591 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">verifySuccessfulNavigationToLinkedinProfile</span>
+                <span class="method-start">9596 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown(org.testng.TestRunner@2f236de0)</span>
+                <span class="method-start">20690 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">20692 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">20693 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifySuccessfulNavigationToGithubProfile</span>
+                <span class="method-start">20693 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown(org.testng.TestRunner@2f236de0)</span>
+                <span class="method-start">20929 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">20930 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">verifySuccessfulNavigationToWhatsApp</span>
+                <span class="method-start">20931 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">20931 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown(org.testng.TestRunner@2f236de0)</span>
+                <span class="method-start">31138 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">31141 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">31142 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifyVisitorCanSendAnEmailViaForm(John Doe, JohnDoe@example.com, Test - Inquiry about services, Hello, This is a message sent by the t...)</span>
+                <span class="method-start">31142 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown(org.testng.TestRunner@2f236de0)</span>
+                <span class="method-start">31925 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-suite after">
+                <span class="method-name">openReport</span>
+                <span class="method-start">31943 ms</span>
+              </div> <!-- configuration-suite after -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+<script type="text/javascript" src="testng-reports2.js"></script>
+</html>
