@@ -1,21 +1,15 @@
 package tests.ui;
 
-import listeners.CustomListener;
 import org.testng.annotations.DataProvider;
 import pages.*;
 import pages.components.Toast;
 import testData.TestData;
 import utils.AssertUtils;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import testData.URLs;
 import utils.DriverUtils;
 import utils.RobotUtils;
-import io.qameta.allure.*;
-
-@Listeners(CustomListener.class)
-
 
 public class ContactTests extends BaseTest {
     private ContactPage contactPage;

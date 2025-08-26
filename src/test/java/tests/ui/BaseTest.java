@@ -11,7 +11,8 @@ import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 
-@Listeners(CustomListener.class)
+@Listeners({CustomListener.class, io.qameta.allure.testng.AllureTestNg.class})
+
 public class BaseTest {
     protected WebDriver driver;
 
