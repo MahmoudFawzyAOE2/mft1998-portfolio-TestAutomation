@@ -41,6 +41,51 @@ jobs:
       - name: Run tests
         run: mvn clean test -B --no-transfer-progress -Dheadless=true #cmd prompt to run tests
 
+      - name: Debug - Check test-output folders
+        run: |
+          echo "=== Debugging: Checking for test-output folders ==="
+          echo "Current working directory: $(pwd)"
+          echo ""
+          
+          # Find all test-output directories in the system
+          echo "Searching for test-output folders..."
+          find . -type d -name "test-output" -exec echo "Found: {}" \; 2>/dev/null || echo "No test-output folders found with find command"
+          
+          echo ""
+          echo "Checking current directory structure:"
+          ls -la
+          
+          echo ""
+          echo "Checking if test-output exists in current directory:"
+          if [ -d "test-output" ]; then
+            echo "✓ test-output directory exists"
+            echo "Contents of test-output:"
+            ls -la test-output/
+            echo ""
+            echo "Last modified time of test-output directory:"
+            stat test-output/ | grep -E "(Modify|Access|Change)"
+            echo ""
+            echo "File modification times in test-output:"
+            find test-output/ -type f -exec ls -la {} \; 2>/dev/null || echo "No files found in test-output"
+          else
+            echo "✗ test-output directory does not exist in current directory"
+          fi
+          
+          echo ""
+          echo "Checking for test-output in common Maven locations:"
+          for dir in target/surefire-reports target/failsafe-reports target/test-output; do
+            if [ -d "$dir" ]; then
+              echo "✓ Found: $dir"
+              echo "  Last modified: $(stat "$dir" | grep Modify || echo 'Unable to get modification time')"
+              echo "  Contents:"
+              ls -la "$dir/" | head -10
+            else
+              echo "✗ Not found: $dir"
+            fi
+          done
+          
+          echo "=== End debugging ==="
+          
       - name: Add timestamp to reports
         run: date > test-output/run_timestamp.txt
         
