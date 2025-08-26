@@ -8,9 +8,9 @@
                     <include name="verifySuccessfulNavigationToLinkedinProfile"/>
                     <include name="verifySuccessfulNavigationToGithubProfile"/>
                     <include name="verifySuccessfulNavigationToWhatsApp"/>
-                    <include name="verifyVisitorCanSendAnEmailViaForm"/>
                 </methods>
             </class>
         </classes>
     </test>
 </suite>
+ 

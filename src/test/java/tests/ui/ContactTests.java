@@ -12,6 +12,7 @@ import org.testng.annotations.Test;
 import testData.URLs;
 import utils.DriverUtils;
 import utils.RobotUtils;
+import io.qameta.allure.*;
 
 @Listeners(CustomListener.class)
 
@@ -74,9 +75,6 @@ public class ContactTests extends BaseTest {
         // Wait for the WhatsApp link to open in a new tab
         driverUtils.switchToTab(1);
 
-        // Press Enter to confirm the WhatsApp popup
-        robotUtils.pressEnter();
-
         // Verify that the WhatsApp chat opens with the correct phone number
         assertUtils.assertURLContains("whatsapp");
     }
@@ -88,6 +86,7 @@ public class ContactTests extends BaseTest {
         };
     }
 
+    // this test was removed from TestNG.xml due to FormSpree limitations
     @Test(priority = 4, dataProvider = "contactFormData")
     public void verifyVisitorCanSendAnEmailViaForm(String name, String email, String subject, String message) {
         // Navigate to Services page

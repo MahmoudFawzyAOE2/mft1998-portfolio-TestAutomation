@@ -22,11 +22,7 @@ public class BaseTest {
 
     @AfterMethod
     public void tearDown(ITestContext context) {
-        if (CustomListener.testFailed) {
-            System.out.println("Test failed. Keeping browser open for debugging.");
-        } else {
             DriverManager.quitDriver();
-        }
     }
 
     @AfterSuite
@@ -37,15 +33,6 @@ public class BaseTest {
             return;
         }
 
-        try {
-            File htmlFile = new File("test-output/html/index.html");
-            if (htmlFile.exists()) {
-                Desktop.getDesktop().browse(htmlFile.toURI());
-            } else {
-                System.out.println("Report not found: test-output/html/index.html");
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        System.out.println("I will add a utility to open allure report automatically soon. God willing");
     }
 }

@@ -40,87 +40,33 @@ jobs:
           
       - name: Run tests
         run: mvn clean test -B --no-transfer-progress -Dheadless=true #cmd prompt to run tests
-
-      - name: Debug - Check test-output folders
-        run: |
-          echo "=== Debugging: Checking for test-output folders ==="
-          echo "Current working directory: $(pwd)"
-          echo ""
-          
-          # Find all test-output directories in the system
-          echo "Searching for test-output folders..."
-          find . -type d -name "test-output" -exec echo "Found: {}" \; 2>/dev/null || echo "No test-output folders found with find command"
-          
-          echo ""
-          echo "Checking current directory structure:"
-          ls -la
-          
-          echo ""
-          echo "Checking if test-output exists in current directory:"
-          if [ -d "test-output" ]; then
-            echo "✓ test-output directory exists"
-            echo "Contents of test-output:"
-            ls -la test-output/
-            echo ""
-            echo "Last modified time of test-output directory:"
-            stat test-output/ | grep -E "(Modify|Access|Change)"
-            echo ""
-            echo "File modification times in test-output:"
-            find test-output/ -type f -exec ls -la {} \; 2>/dev/null || echo "No files found in test-output"
-          else
-            echo "✗ test-output directory does not exist in current directory"
-          fi
-          
-          echo ""
-          echo "Checking for test-output in common Maven locations:"
-          for dir in target/surefire-reports target/failsafe-reports target/test-output; do
-            if [ -d "$dir" ]; then
-              echo "✓ Found: $dir"
-              echo "  Last modified: $(stat "$dir" | grep Modify || echo 'Unable to get modification time')"
-              echo "  Contents:"
-              ls -la "$dir/" | head -10
-            else
-              echo "✗ Not found: $dir"
-            fi
-          done
-          
-          echo "=== End debugging ==="
           
       - name: Add timestamp to reports
         run: date > test-output/run_timestamp.txt
-        
-      - name: Commit and push test-output reports
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -f test-output || true
-          git commit -m "chore: update TestNG test-output reports [skip ci]" || echo "No changes to commit"
-          git push origin HEAD:${GITHUB_REF#refs/heads/}
           
-      - name: Sync test-output to TestReport repository
-        env:
-          PAT: ${{ secrets.PAT_TOKEN }}
-        run: |
-          # Clone reporting repo
-          git clone https://x-access-token:${PAT}@github.com/MahmoudFawzyAOE2/mft1998-portfolio-TestReport.git temp-repo2
-          cd temp-repo2
+      - name: Load test report history
+        uses: actions/checkout@v3
+        if: always()
+        continue-on-error: true
+        with:
+          ref: gh-pages
+          path: gh-pages
 
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      - name: Build test report
+        uses: simple-elf/allure-report-action@v1.7
+        if: always()
+        with:
+          gh_pages: gh-pages
+          allure_history: allure-history
+          allure_results: build/allure-results
 
-          # Replace old reports with fresh ones
-          rm -rf test-output
-          cp -r ../test-output ./test-output
-
-          # Add timestamp so commits are guaranteed
-          date > test-output/run_timestamp.txt
-
-          git add -f test-output/
-          git commit -m "chore: update test-output from TestAutomation CI [skip ci]" --allow-empty
-          git push origin main
-
-          cd ..
-          rm -rf temp-repo2
+      - name: Publish test report
+        uses: peaceiris/actions-gh-pages@v3
+        if: always()
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: allure-history
 
       - name: Send Email with Results
         uses: dawidd6/action-send-mail@v3
