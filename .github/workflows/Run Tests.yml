@@ -39,7 +39,9 @@ jobs:
           distribution: 'temurin'
           
       - name: Run tests
-        run: mvn clean test -B --no-transfer-progress -Dheadless=true #cmd prompt to run tests
+        run: |
+          date +"%H:%M:%S"
+          mvn clean test -B --no-transfer-progress -Dheadless=true #cmd prompt to run tests
 
       - name: Debug - Check test-output folders
         run: |
@@ -85,7 +87,26 @@ jobs:
           done
           
           echo "=== End debugging ==="
+
+      - name: Create test-output from Maven reports
+        run: |
+          # Create test-output directory if it doesn't exist
+          mkdir -p test-output
           
+          if [ -d "target/surefire-reports" ]; then
+            echo "Processing surefire-reports..."
+            
+            # Copy ReportNG reports (html & xml subdirectories)
+            if [ -d "target/surefire-reports/html" ]; then
+              echo "✓ Copying ReportNG HTML reports..."
+              cp -r target/surefire-reports/html test-output/
+            fi
+            
+            if [ -d "target/surefire-reports/xml" ]; then
+              echo "✓ Copying ReportNG XML reports..."
+              cp -r target/surefire-reports/xml test-output/
+            fi
+            
       - name: Add timestamp to reports
         run: date > test-output/run_timestamp.txt
         
