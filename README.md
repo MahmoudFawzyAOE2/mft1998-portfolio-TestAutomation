@@ -99,17 +99,17 @@ The CI/CD process connects **three repositories**:
     - Sends an Email which notifies about the done tests and includes a link to the reporting website
     - Keeps history of the previous runs to track excution history
 
-### 📊 Repository Interaction Graph
+### 📊 Repository Interaction Graph via CI/CD workflows
 
 ```mermaid
 graph TD
-    A[/📂 Website Repo\] -- Deploy --> F(🌐 Portfolio Website)
-    A -- run-test trigger --> B[/📂 Test Repo - main Branch\]
-    E -- Test Code Edits --> B
+    A[/📂 Website Repo\] -- 1) Deploy --> F(🌐 Portfolio Website)
+    A -- 2) run-test trigger --> B[/📂 Test Repo - main Branch\]
+    E -- Test Edits --> B
     E((👤SW Tester)) -- Manual Dispatch --> B
-    B -- Commit Allure Reports --> C[/📂 Test Repo - gh-Pages Branch\]
-    C -- GitHub Pages --> D(🌐 Report Website)
-    C -- Email --> G((👤 Stakeholders))   
+    B -- 3) Commit Allure Reports --> C[/📂 Test Repo - gh-Pages Branch\]
+    C -- 4) Deploy Report --> D(🌐 Report Website)
+    C -- 5) Email --> G((👤 Stakeholders))   
 ```
 
 ## 🔧 Tech Stack
