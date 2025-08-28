@@ -11,7 +11,7 @@ This project is designed for testing core functionalities of My portfolio websit
 
 ---
 
-## 📂 Project Structure
+## 📂 Project Structure - `main` branch
 
 ```
 ├── .github/workflows/       # GitHub Actions CI/CD workflows
@@ -38,8 +38,8 @@ This project is designed for testing core functionalities of My portfolio websit
 - **Page Object Model (POM)** for clean and reusable test code
 - **Utilities layer** for common actions (waits, assertions, element interactions, etc.)
 - **TestNG Listeners** for reporting and preserving execution Logs 
-- **Custom Reports** TestNG (HTML, XML)
-- **GitHub Actions Integration** for CI/CD pipelines
+- **Allure Reports** and its deployment via Github Pages
+- **GitHub Actions Integration** for CI/CD pipelines 
 - **Separation of Concerns**:  
   - `src/main/java` → Framework code  
   - `src/test/java` → Test cases
@@ -70,8 +70,8 @@ This project is designed for testing core functionalities of My portfolio websit
 
 ## 📊 Reports
 
-- **Default TestNG Reports** → `test-output/`  
-  Includes HTML reports with screenshots of passed, failed, and skipped tests.
+- **Allure Reports** → `test-output/`  
+  Allure HTML Reports are deployed via Github Pages to [Reports Website](https://mahmoudfawzyaoe2.github.io/mft1998-portfolio-TestAutomation/)
 
 ---
 
@@ -80,17 +80,13 @@ This project is designed for testing core functionalities of My portfolio websit
 This project is configured with **GitHub Actions** (`.github/workflows/`):
 - `Run Tests.yml` → Executes the test suite on push
 
-Test results and reports are committed to the reporting repo as GitHub Actions artifacts.
-- [Portfolio Website](https://mahmoudfawzyaoe2.github.io/mft1998/)
-- [Reports Website](https://mahmoudfawzyaoe2.github.io/mft1998-portfolio-TestReport/)
-
 ### 🔄 Workflow Between Repositories
 
 The CI/CD process connects **three repositories**:
 
 1. **[Website Repo](https://github.com/MahmoudFawzyAOE2/mft1998-portfolio)**
     - Stores portfolio website code.
-    - Fires the **`run-test` trigger** whenever changes are deployed.
+    - Fires the **`run-test` trigger** whenever changes are built and deployed to [Portfolio Website](https://mahmoudfawzyaoe2.github.io/mft1998-portfolio).
 
 2. **Test Repo** (This Repo)
     - Contains test automation code .
@@ -98,26 +94,22 @@ The CI/CD process connects **three repositories**:
         - Manual workflow dispatch, or
         - Tests edits (push to this Repo), or
         - Trigger event from Website Repo.
-    - Generates **test reports**.
-    - Commits Test Reports to the Reporting Repo 
+    - Generates Allure Reports on a secondary branch `gh-pages` .
+    - Deploys the HTML Report to [Reports Website](https://mahmoudfawzyaoe2.github.io/mft1998-portfolio-TestAutomation/)
     - Sends an Email which notifies about the done tests and includes a link to the reporting website
-
-3. **[Reporting Repository](https://github.com/MahmoudFawzyAOE2/mft1998-portfolio-TestReport)**
-    - Stores the generated **test reports**.
-    - Publishes them via **GitHub Pages** for public access.
+    - Keeps history of the previous runs to track excution history
 
 ### 📊 Repository Interaction Graph
 
 ```mermaid
-graph LR
-
-    A -- Deploy --> F(🌐 Portfolio Website)
-    A[/📂 Website Repo\] -- run-test trigger --> B[/📂 Test Repo\]
-    B -- Commit TestNG Reports --> C[/📂 Reporting Repo\]
-    C -- GitHub Pages --> D(🌐 Reports Website)
-    B -- Email --> G((👤 Stakeholders))
+graph TD
+    A[/📂 Website Repo\] -- Deploy --> F(🌐 Portfolio Website)
+    A -- run-test trigger --> B[/📂 Test Repo - main Branch\]
     E -- Test Code Edits --> B
     E((👤SW Tester)) -- Manual Dispatch --> B
+    B -- Commit Allure Reports --> C[/📂 Test Repo - gh-Pages Branch\]
+    C -- GitHub Pages --> D(🌐 Report Website)
+    C -- Email --> G((👤 Stakeholders))   
 ```
 
 ## 🔧 Tech Stack
@@ -126,18 +118,21 @@ graph LR
 - **Build Tool:** Maven
 - **Test Framework:** TestNG
 - **UI Automation:** Selenium WebDriver
+- **Reporting:** Allure Reports
 - **CI/CD:** GitHub Actions
 
 ---
 
 ## 📌 Next Improvements
 
+- [ ] Review The framework to ensure best practices are being followed
 - [ ] Enhance The CI/CD Triggers to exclude non-code related changes
+- [ ] Impoove Test data management
 - [ ] Add more custom listeners for better events logging
 - [ ] Add Utils Documentation
+- [ ] Increase Test coverage by adding other pages
 - [ ] Add parallel test execution  
 - [ ] Add Screenshot for better reporting
-- [ ] Add Allure Reports
 - [ ] Add API Tests using RestAssured
 - [ ] Improve test categorization (smoke, regression, API, UI)  
 
