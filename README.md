@@ -4,6 +4,7 @@
 [![Maven](https://img.shields.io/badge/Maven-Build-red.svg)](https://maven.apache.org/)
 [![TestNG](https://img.shields.io/badge/TestNG-Testing-green.svg)](https://testng.org/)
 [![Selenium](https://img.shields.io/badge/Selenium-Automation-brightgreen.svg)](https://www.selenium.dev/)
+[![Allure](https://img.shields.io/badge/Allure-Reporting-purple.svg)](https://docs.qameta.io/allure/)
 [![CI](https://github.com/MahmoudFawzyAOE2/mft1998-portfolio-TestAutomation/actions/workflows/Run%20Tests.yml/badge.svg)](https://github.com/MahmoudFawzyAOE2/mft1998-portfolio-TestAutomation/actions)
 
 A **UI test automation framework** built with **Java, TestNG, and Selenium**.  
@@ -38,7 +39,7 @@ This project is designed for testing core functionalities of My portfolio websit
 - **Page Object Model (POM)** for clean and reusable test code
 - **Utilities layer** for common actions (waits, assertions, element interactions, etc.)
 - **TestNG Listeners** for reporting and preserving execution Logs 
-- **Custom Reports** TestNG (HTML, XML)
+- **Allure Reporting** integrated with GitHub Actions and GitHub Pages
 - **GitHub Actions Integration** for CI/CD pipelines
 - **Separation of Concerns**:  
   - `src/main/java` → Framework code  
@@ -70,74 +71,79 @@ This project is designed for testing core functionalities of My portfolio websit
 
 ## 📊 Reports
 
-- **Default TestNG Reports** → `test-output/`  
-  Includes HTML reports with screenshots of passed, failed, and skipped tests.
+-   **Allure Reports** → Automatically generated during test execution.
+-   Reports are published via **GitHub Pages** on the `gh-pages` branch
+    of this repository.
+-   Access the reports here:
+    [Reports Website](https://mahmoudfawzyaoe2.github.io/mft1998-portfolio-TestAutomation/)
 
 ---
 
 ## 🖥️ CI/CD Integration
 
-This project is configured with **GitHub Actions** (`.github/workflows/`):
-- `Run Tests.yml` → Executes the test suite on push
+This project is configured with **GitHub Actions**
+(`.github/workflows/`): - `Run Tests.yml` → Executes the test suite on
+push - Generates **Allure Reports** and publishes them to **GitHub
+Pages** (`gh-pages` branch)
 
-Test results and reports are committed to the reporting repo as GitHub Actions artifacts.
-- [Portfolio Website](https://mahmoudfawzyaoe2.github.io/mft1998/)
-- [Reports Website](https://mahmoudfawzyaoe2.github.io/mft1998-portfolio-TestReport/)
 
 ### 🔄 Workflow Between Repositories
 
-The CI/CD process connects **three repositories**:
+The CI/CD process connects **two repositories**:
 
-1. **[Website Repo](https://github.com/MahmoudFawzyAOE2/mft1998-portfolio)**
+1. 📂 **[Website Repo](https://github.com/MahmoudFawzyAOE2/mft1998-portfolio)**
     - Stores portfolio website code.
     - Fires the **`run-test` trigger** whenever changes are deployed.
 
-2. **Test Repo** (This Repo)
+2. 📂 **Test Repo**
+- (`main` branch of This Repo) 
     - Contains test automation code .
     - Executes test cases when triggered by:
         - Manual workflow dispatch, or
         - Tests edits (push to this Repo), or
         - Trigger event from Website Repo.
-    - Generates **test reports**.
-    - Commits Test Reports to the Reporting Repo 
+    - logs tests results and deploy them to `gh-pages` branch
+
+-  (`gh-pages` branch of This Repo) [Reporting website](https://github.com/MahmoudFawzyAOE2/mft1998-portfolio-TestAutomation)
+    - Publishes them via **GitHub Pages** for public access.
     - Sends an Email which notifies about the done tests and includes a link to the reporting website
 
-3. **[Reporting Repository](https://github.com/MahmoudFawzyAOE2/mft1998-portfolio-TestReport)**
-    - Stores the generated **test reports**.
-    - Publishes them via **GitHub Pages** for public access.
 
 ### 📊 Repository Interaction Graph
 
 ```mermaid
-graph LR
+graph TD
 
     A -- Deploy --> F(🌐 Portfolio Website)
-    A[/📂 Website Repo\] -- run-test trigger --> B[/📂 Test Repo\]
-    B -- Commit TestNG Reports --> C[/📂 Reporting Repo\]
-    C -- GitHub Pages --> D(🌐 Reports Website)
-    B -- Email --> G((👤 Stakeholders))
+    A[/📂 Website Repo\] -- run-test trigger --> B[/📂 Test Repo - main\]
+    B -- Commit Test results --> C[/📂 Test Repo - gh-pages\]
+    C -- GitHub Pages --> D(🌐 Report Website)
+    C -- Email --> G((👤 Stakeholders))
     E -- Test Code Edits --> B
     E((👤SW Tester)) -- Manual Dispatch --> B
 ```
+---
 
 ## 🔧 Tech Stack
 
-- **Language:** Java 17+
-- **Build Tool:** Maven
-- **Test Framework:** TestNG
-- **UI Automation:** Selenium WebDriver
-- **CI/CD:** GitHub Actions
+-   **Language:** Java 17+
+-   **Build Tool:** Maven
+-   **Test Framework:** TestNG
+-   **UI Automation:** Selenium WebDriver
+-   **Reporting:** Allure Reports
+-   **CI/CD:** GitHub Actions + GitHub Pages
 
 ---
 
 ## 📌 Next Improvements
 
+- [ ] Review POM structure to ensure the best programming practices are being followed
 - [ ] Enhance The CI/CD Triggers to exclude non-code related changes
 - [ ] Add more custom listeners for better events logging
 - [ ] Add Utils Documentation
+- [ ] Increase Automation coverage by adding more Test Cases
 - [ ] Add parallel test execution  
 - [ ] Add Screenshot for better reporting
-- [ ] Add Allure Reports
 - [ ] Add API Tests using RestAssured
 - [ ] Improve test categorization (smoke, regression, API, UI)  
 
