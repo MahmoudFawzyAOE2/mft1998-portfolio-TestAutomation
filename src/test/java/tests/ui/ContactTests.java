@@ -1,31 +1,28 @@
 package tests.ui;
 
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
-import pages.*;
+import pages.ContactPage;
 import pages.components.Toast;
 import testData.TestData;
 import utils.AssertUtils;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import testData.URLs;
 import utils.DriverUtils;
-import utils.RobotUtils;
 
 public class ContactTests extends BaseTest {
     private ContactPage contactPage;
     private AssertUtils assertUtils;
     private DriverUtils driverUtils;
-    private RobotUtils robotUtils;
     private Toast toast;
 
-    @BeforeMethod
+    @BeforeClass
     public void setUp() {
-        // Connect WebDriver from Test with WebDriver from Page
+        // Create Objects form Pages to connect WebDriver from Test with WebDriver from Page
         contactPage = new ContactPage(driver);
         toast = new Toast(driver);
         assertUtils = new AssertUtils(driver);
         driverUtils = new DriverUtils(driver);
-        robotUtils = new RobotUtils(driver);
     }
 
     @Test(priority = 1)
@@ -79,7 +76,6 @@ public class ContactTests extends BaseTest {
                 { TestData.NAME, TestData.EMAIL, TestData.SUBJECT, TestData.MESSAGE }
         };
     }
-
     // this test was removed from TestNG.xml due to FormSpree limitations
     @Test(priority = 4, dataProvider = "contactFormData")
     public void verifyVisitorCanSendAnEmailViaForm(String name, String email, String subject, String message) {

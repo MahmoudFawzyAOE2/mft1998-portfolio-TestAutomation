@@ -8,31 +8,43 @@ public class ElementActions {
     private final WebDriver driver;
     private WaitUtils waitUtils;
 
-
+    /*-----------  Constructor  -----------*/
     public ElementActions(WebDriver driver) {
         this.driver = driver;
         this.waitUtils = new WaitUtils(driver);
-
     }
 
+    /*-----------  Element Actions  -----------*/
     public void scrollToElement(WebElement element) {
         ((JavascriptExecutor) driver).executeScript(
                 "arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});", element);
     }
+
     public void hoverElement(WebElement element) {
         new Actions(driver).moveToElement(element).perform();
     }
+
     public void enterTextInField(WebElement field, String text) {
+        waitUtils.waitForVisibility(field);
         System.out.println("Entering text in field: " + field + " with text: " + text);
         scrollToElement(field);
         field.clear();
         field.sendKeys(text);
     }
+    public void enterTextInField(By locator, String text) {
+        WebElement field = waitUtils.waitToBeClickable(locator); // handles wait
+        System.out.println("Entering text in field: " + locator + " with text: " + text);
+        scrollToElement(field);
+        field.clear();
+        field.sendKeys(text);
+    }
+
     public void selectFromMenu(WebElement dropdown, String option) {
         System.out.println("Selecting option: " + option + " from dropdown: " + dropdown);
         Select select = new Select(dropdown);
         select.selectByVisibleText(option);
     }
+
     public void clickElement(WebElement element) {
         scrollToElement(element);
         try {
@@ -58,6 +70,12 @@ public class ElementActions {
             throw e;
         }
     }
+    public void clickElement(By locator) {
+        WebElement element = waitUtils.waitToBeClickable(locator); // handles wait
+        scrollToElement(element);
+        element.click();
+    }
+
     public String getTextFromElement(WebElement element) {
 
         waitUtils.waitForVisibility(element);
@@ -65,6 +83,5 @@ public class ElementActions {
         System.out.println("Retrieved text: \"" + text + "\"");
         return text;
     }
-
 
 }

@@ -11,7 +11,6 @@ public class ProjectsPage  extends BasePage {
     /*-----------  Constructor  -----------*/
     public ProjectsPage(WebDriver driver) {
         super(driver);
-        this.driver = driver;
     }
 
     /*-----------  Locators  -----------*/

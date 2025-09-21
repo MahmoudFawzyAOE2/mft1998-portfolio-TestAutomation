@@ -31,7 +31,7 @@ public class AssertUtils {
                 "Text mismatch! Expected: \"" + expectedText + "\", but got: \"" + actualText + "\"");
     }
     public void assertSearchResultsCount(Supplier<Integer> countSupplier, int expectedCount) {
-        waitUtils.wait.until(driver -> countSupplier.get() == expectedCount);
+        waitUtils.waitForCount(countSupplier, expectedCount);
         Assert.assertEquals(countSupplier.get(), expectedCount);
     }
     public void assertEquals(List<String> actualList, List<String> expectedList) {

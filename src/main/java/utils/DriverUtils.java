@@ -18,8 +18,7 @@ public class DriverUtils {
         List<String> tabs = driver.getWindowHandles().stream().toList();
         System.out.println(tabs);
     }
-
-    public void viewCurentTab() {
+    public void viewCurrentTab() {
         String currentTab = driver.getWindowHandle();
         System.out.println("Current Tab: " + currentTab);
     }

@@ -1,18 +1,22 @@
 package utils;
 
 import org.openqa.selenium.WebDriver;
-
 import java.awt.*;
 import java.awt.event.KeyEvent;
 
 public class RobotUtils {
+    /* Useful for handling OS-level popups like file upload dialogs */
 
     private final WebDriver driver;
 
+    /*-----------  Constructor  -----------*/
     public RobotUtils(WebDriver driver) {
         this.driver = driver;
     }
 
+    /*-----------  Actions  -----------*/
+    // Method to simulate pressing the Enter key
+    // Static method to allow calling without instantiating the class
     public static void pressEnter() {
         try {
             Robot robot = new Robot();

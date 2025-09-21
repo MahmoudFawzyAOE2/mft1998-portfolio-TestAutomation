@@ -2,14 +2,21 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import testData.TestData;
+import utils.ElementActions;
 
 public class ContactPage extends BasePage {
 
     /*-----------  Constructor  -----------*/
+
+    // Main constructor, public to be accessible from test classes
     public ContactPage(WebDriver driver) {
         super(driver);
     }
+
+    // ElementActions instance for interacting with web elements,
+    // private for internal use only, final to ensure immutability
+    private final ElementActions elementActions = new ElementActions(driver);
+
 
     /*-----------  Locators  -----------*/
     By githubLocator = By.id("btn-github");
@@ -26,22 +33,22 @@ public class ContactPage extends BasePage {
     /*-----------  Actions  -----------*/
     public void clickGithubIcon() {
         WebElement githubButton = waitUtils.waitForVisibility(githubLocator);
-        githubButton.click();
+        elementActions.clickElement(githubButton);
     }
     public void clickLinkedInIcon() {
         WebElement linkedinButton = waitUtils.waitForVisibility(linkedinLocator);
-        linkedinButton.click();
+        elementActions.clickElement(linkedinButton);
     }
     public void clickWhatsAppIcon() {
         WebElement whatsappButton = waitUtils.waitForVisibility(whatsappLocator);
-        whatsappButton.click();
+        elementActions.clickElement(whatsappButton);
     }
     public void fillForm(String name, String email, String subject, String message) {
-        waitUtils.waitForVisibility(nameFieldLocator).sendKeys(name);
-        waitUtils.waitForVisibility(emailFieldLocator).sendKeys(email);
-        waitUtils.waitForVisibility(subjectFieldLocator).sendKeys(subject);
-        waitUtils.waitForVisibility(messageFieldLocator).sendKeys(message);
-        waitUtils.waitForVisibility(sendButtonLocator).click();
+        elementActions.enterTextInField(nameFieldLocator, name);
+        elementActions.enterTextInField(emailFieldLocator, email);
+        elementActions.enterTextInField(subjectFieldLocator, subject);
+        elementActions.enterTextInField(messageFieldLocator, message);
+        elementActions.clickElement(sendButtonLocator);
     }
 
 }

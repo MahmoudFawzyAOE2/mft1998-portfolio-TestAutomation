@@ -7,16 +7,17 @@ import org.testng.annotations.*;
 import listeners.CustomListener;
 import utils.EnvironmentUtils;
 
-import java.awt.*;
-import java.io.File;
 import java.io.IOException;
 
 @Listeners({CustomListener.class, io.qameta.allure.testng.AllureTestNg.class})
 
 public class BaseTest {
+    // WebDriver instance is protected to be accessible in subclasses and not public
     protected WebDriver driver;
 
+
     @BeforeMethod
+    // Before each test method, set up the WebDriver
     public void setup() throws IOException {
         driver = DriverManager.getDriver();
     }
