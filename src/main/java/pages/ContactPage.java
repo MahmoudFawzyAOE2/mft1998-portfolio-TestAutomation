@@ -2,21 +2,16 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import utils.ElementActions;
 
 public class ContactPage extends BasePage {
 
     /*-----------  Constructor  -----------*/
 
     // Main constructor, public to be accessible from test classes
+    // super(driver) will create instances of WaitUtils and ElementActions
     public ContactPage(WebDriver driver) {
         super(driver);
     }
-
-    // ElementActions instance for interacting with web elements,
-    // private for internal use only, final to ensure immutability
-    private final ElementActions elementActions = new ElementActions(driver);
-
 
     /*-----------  Locators  -----------*/
     By githubLocator = By.id("btn-github");

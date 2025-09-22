@@ -1,17 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="mft1998-portfolio-TestAutomation"
-           tests="1"
+<testsuite name="UITest"
+           tests="3"
            failures="0"
            errors="0"
            skipped="0"
-           time="11.845">
+           time="99.045">
     <properties></properties>
 
 
 
             <testcase
                 name="verifySuccessfulNavigationToLinkedinProfile"
-                time="11.845"
+                time="23.797"
+                classname="tests.ui.ContactTests">
+            </testcase>
+            <testcase
+                name="verifySuccessfulNavigationToGithubProfile"
+                time="7.266"
+                classname="tests.ui.ContactTests">
+            </testcase>
+            <testcase
+                name="verifySuccessfulNavigationToWhatsApp"
+                time="67.982"
                 classname="tests.ui.ContactTests">
             </testcase>
 </testsuite>

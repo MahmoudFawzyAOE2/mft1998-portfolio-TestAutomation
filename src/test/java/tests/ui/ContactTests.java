@@ -17,6 +17,7 @@ public class ContactTests extends BaseTest {
     private Toast toast;
 
     @BeforeClass
+    // @BeforeClass is added here as it may differ from one test class to another
     public void setUp() {
         // Create Objects form Pages to connect WebDriver from Test with WebDriver from Page
         contactPage = new ContactPage(driver);
@@ -33,11 +34,15 @@ public class ContactTests extends BaseTest {
         // Click on the LinkedIn icon
         contactPage.clickLinkedInIcon();
 
-        // Wait for the LinkedIn link to open in a new tab
-        driverUtils.switchToTab(1);
+        // Switch to the new tab opened by the LinkedIn link
+        driverUtils.switchToLastTab();
 
         // Verify that the LinkedIn profile opens in a new tab
         assertUtils.assertURLContains("linkedin");
+
+        // Close the LinkedIn tab and switch back to the original tab
+        driver.close();
+        driverUtils.switchToTab(0);
     }
 
     @Test(priority = 2)
@@ -49,25 +54,34 @@ public class ContactTests extends BaseTest {
         contactPage.clickGithubIcon();
 
         // Switch to the new tab opened by the GitHub link
-        driverUtils.switchToTab(1);
+        driverUtils.switchToLastTab();
 
         // Verify that the GitHub profile opens in a new tab
-        assertUtils.assertURLContains("github");
+        assertUtils.assertURLContains("MahmoudFawzyAOE2");
+
+        // Close the GitHub tab and switch back to the original tab
+        driver.close();
+        driverUtils.switchToTab(0);
     }
 
     @Test(priority = 3)
     public void verifySuccessfulNavigationToWhatsApp() throws InterruptedException {
+
         // Navigate to Services page
         driver.navigate().to(URLs.CONTACT_URL);
 
         // Click on the WhatsApp icon
         contactPage.clickWhatsAppIcon();
 
-        // Wait for the WhatsApp link to open in a new tab
-        driverUtils.switchToTab(1);
+        // Switch to the new tab opened by the WhatsApp link
+        driverUtils.switchToLastTab();
 
         // Verify that the WhatsApp chat opens with the correct phone number
         assertUtils.assertURLContains("whatsapp");
+
+        // Close the WhatsApp tab and switch back to the original tab
+        driver.close();
+        driverUtils.switchToTab(0);
     }
 
     @DataProvider(name = "contactFormData")

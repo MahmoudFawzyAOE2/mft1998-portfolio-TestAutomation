@@ -1,7 +1,6 @@
 package tests.ui;
 
 import drivers.DriverManager;
-import org.testng.ITestContext;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;
 import listeners.CustomListener;
@@ -15,16 +14,20 @@ public class BaseTest {
     // WebDriver instance is protected to be accessible in subclasses and not public
     protected WebDriver driver;
 
-
-    @BeforeMethod
-    // Before each test method, set up the WebDriver
+    @BeforeSuite
+    // setup method to initialize WebDriver before any tests run
+    /*
+    initialization is done once for the entire suite, previously was beforeMethod
+    Changed to BeforeSuite to optimize performance by reducing browser restarts
+    If tests require fresh browser state, consider using @BeforeMethod instead
+    */
     public void setup() throws IOException {
         driver = DriverManager.getDriver();
     }
 
-    @AfterMethod
-    public void tearDown(ITestContext context) {
-            DriverManager.quitDriver();
+    @AfterSuite
+    public void tearDown() {
+        DriverManager.quitDriver();
     }
 
     @AfterSuite
@@ -35,6 +38,15 @@ public class BaseTest {
             return;
         }
 
-        System.out.println("I will add a utility to open allure report automatically soon. God willing");
+        // Open Allure report Locally using ProcessBuilder
+        try {
+            System.out.println("Opening Allure report...");
+            new ProcessBuilder("cmd", "/c", "allure serve allure-results").start();
+            System.out.println("✅ Allure report server started!");
+        } catch (IOException e) {
+            System.err.println("❌ Failed to open report: " + e.getMessage());
+            System.err.println("Make sure Allure CLI is installed: npm install -g allure-commandline");
+        }
+
     }
 }

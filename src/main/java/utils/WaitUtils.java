@@ -8,10 +8,12 @@ import java.util.function.Supplier;
 
 public class WaitUtils {
 
+    private final WebDriver driver;
     private final WebDriverWait wait;
 
     /*-----------  Constructor  -----------*/
     public WaitUtils(WebDriver driver) {
+        this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
     }
@@ -20,7 +22,6 @@ public class WaitUtils {
     public WebElement waitForVisibility(By locator) {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
-
     public WebElement waitForVisibility(WebElement element) {
         return wait.until(ExpectedConditions.visibilityOf(element));
     }
@@ -28,7 +29,6 @@ public class WaitUtils {
     public WebElement waitToBeClickable(By locator) {
         return wait.until(ExpectedConditions.elementToBeClickable(locator));
     }
-
     public WebElement waitToBeClickable(WebElement element) {
         return wait.until(ExpectedConditions.elementToBeClickable(element));
     }
