@@ -1,1 +1,0 @@
-{"uuid":"0ca9f1b6-2817-4e03-8710-bd67e1868f6d","name":"Default Suite","children":["3a601805-0e90-45aa-8cac-b293c7c68519"],"befores":[],"afters":[{"name":"openReport","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1758362758523,"stop":1758362758523}],"start":1758362677731,"stop":1758362758523}

@@ -1,1 +1,0 @@
-{"uuid":"1cf6870e-cb8a-432a-b83f-4e87422f227d","name":"tests.ui.ContactTests.setUp","children":["14d8268d-2be4-46cc-9652-72f24993a6fe"],"description":"","befores":[{"name":"setUp","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1756232143764,"stop":1756232143765}],"afters":[],"start":1756232143764,"stop":1756232143765}

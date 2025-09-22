@@ -1,1 +1,0 @@
-{"uuid":"7d2628d9-686e-4fd5-9500-7894b3e2b75a","name":"Functional UI Suite","children":["a7343420-5e17-4d39-9fdb-c8e162a99c8f"],"befores":[],"afters":[{"name":"openReport","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1758469210076,"stop":1758469210317}],"start":1758469042188,"stop":1758469210317}
