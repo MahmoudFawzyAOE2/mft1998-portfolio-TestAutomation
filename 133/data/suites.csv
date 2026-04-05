@@ -1,0 +1,4 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","3274","verifySuccessfulNavigationToLinkedinProfile","Functional UI Suite","Sun Apr 05 08:46:55 UTC 2026","passed","Sun Apr 05 08:46:59 UTC 2026","tests.ui.ContactTests","UITest","tests.ui.ContactTests","verifySuccessfulNavigationToLinkedinProfile"
+"","686","verifySuccessfulNavigationToWhatsApp","Functional UI Suite","Sun Apr 05 08:47:00 UTC 2026","passed","Sun Apr 05 08:47:00 UTC 2026","tests.ui.ContactTests","UITest","tests.ui.ContactTests","verifySuccessfulNavigationToWhatsApp"
+"","1191","verifySuccessfulNavigationToGithubProfile","Functional UI Suite","Sun Apr 05 08:46:59 UTC 2026","passed","Sun Apr 05 08:47:00 UTC 2026","tests.ui.ContactTests","UITest","tests.ui.ContactTests","verifySuccessfulNavigationToGithubProfile"
